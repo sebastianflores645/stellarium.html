@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa estelar interactivo</title>
+  <script src="https://unpkg.com/stellarium-web-engine@latest/dist/stellarium-web-engine.min.js"></script>
+  <style>
+    html, body, #stellarium-container {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="stellarium-container"></div>
+
+  <script>
+    StellariumWebEngine.start({
+      container: document.getElementById('stellarium-container'),
+      location: {
+        latitude: 19.4326,
+        longitude: -99.1332
+      },
+      date: new Date().toISOString()
+    });
+  </script>
+</body>
+</html>
